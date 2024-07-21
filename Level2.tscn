@@ -36,6 +36,7 @@ move_dir = Vector2(50, 0)
 
 [node name="EndFlag" parent="." instance=ExtResource("6_cg624")]
 position = Vector2(441, -36)
+next_scene = "res://Level3.tscn"
 
 [node name="AnimatedPlayer" parent="." instance=ExtResource("6_dx63b")]
 position = Vector2(9.01831, -12.0447)
