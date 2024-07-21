@@ -16,10 +16,8 @@ func load_level_data():
 			var level_data = levels_data[i]
 			results_text += "Level %d\nScore: %d\nTime: %.3f\n\n" % [i + 1, level_data["score"], level_data["time_elapsed"]]
 		results_label.text = results_text
-		print(results_text)  # Debug print to ensure text is being set
 
 func _on_restart_button_pressed():
-	# Clear saved data on restart
 	var config = ConfigFile.new()
 	config.set_value("game", "levels_data", [])
 	config.save("user://config.cfg")

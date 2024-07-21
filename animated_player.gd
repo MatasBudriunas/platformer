@@ -52,7 +52,6 @@ func _physics_process(delta):
 	if global_position.y > 100:
 		game_over()
 	
-	# Update timer
 	time_passed += delta
 	time_text.text = "Time: %.3f" % time_passed
 
