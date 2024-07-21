@@ -5,7 +5,10 @@ var jump_force : float = 200.0
 var gravity : float = 500.0
 
 var score : int = 0
+var time_passed : float = 0.0
 @onready var score_text : Label = get_node("CanvasLayer/ScoreText")
+@onready var time_text : Label = get_node("CanvasLayer/TimeText")
+@onready var game_timer : Timer = get_node("GameTimer")
 
 @export var run_animation : String
 @export var idle_animation : String
@@ -17,6 +20,7 @@ func _ready():
 			player_sprite.play(idle_animation)
 	else:
 		print("Error: AnimatedSprite node not found!")
+	start_game()
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -47,6 +51,10 @@ func _physics_process(delta):
 
 	if global_position.y > 100:
 		game_over()
+	
+	# Update timer
+	time_passed += delta
+	time_text.text = "Time: %.3f" % time_passed
 
 func game_over():
 	get_tree().reload_current_scene()
@@ -54,3 +62,8 @@ func game_over():
 func add_score(amount):
 	score += amount
 	score_text.text = str("Score: ", score)
+
+func start_game():
+	time_passed = 0.0
+	time_text.text = "Elapsed Time: %.3f" % time_passed
+	game_timer.start()

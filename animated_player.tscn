@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbdleesf2in24"]
+[gd_scene load_steps=10 format=3 uid="uid://bbdleesf2in24"]
 
 [ext_resource type="Script" path="res://animated_player.gd" id="1_3mhga"]
 [ext_resource type="Texture2D" uid="uid://cjfbasl7eygp0" path="res://Sprites/Characters/character_0002.png" id="2_5gcdn"]
@@ -14,6 +14,11 @@ height = 24.0
 font_size = 48
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mes2k"]
+font_size = 48
+outline_size = 5
+outline_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pje4h"]
 animations = [{
@@ -77,6 +82,16 @@ offset_bottom = 84.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_wpcrh")
 
+[node name="TimeText" type="Label" parent="CanvasLayer"]
+offset_left = 793.0
+offset_top = 20.0
+offset_right = 1133.0
+offset_bottom = 87.0
+text = "Elapsed Time: 0"
+label_settings = SubResource("LabelSettings_mes2k")
+
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pje4h")
-animation = &"run_summer"
+animation = &"run"
+
+[node name="GameTimer" type="Timer" parent="."]

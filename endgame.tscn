@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr188bft7g54j"]
+
+[ext_resource type="Script" path="res://endgame.gd" id="1_85yy0"]
+
+[node name="Endgame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 644.0
+script = ExtResource("1_85yy0")
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 566.0
+offset_right = 646.0
+offset_bottom = 598.0
+text = "Restart"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 517.0
+offset_top = 40.0
+offset_right = 817.0
+offset_bottom = 549.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ResultsLabel" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 2
+scroll_following = true
